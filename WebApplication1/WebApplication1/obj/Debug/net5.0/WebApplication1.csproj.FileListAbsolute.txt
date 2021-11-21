@@ -162,3 +162,5 @@ C:\Users\Le Ky Vong\Desktop\DotNETMVCwithEF\DotNetMVCwithEF\WebApplication1\WebA
 C:\Users\Le Ky Vong\Desktop\DotNETMVCwithEF\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Le Ky Vong\Desktop\DotNETMVCwithEF\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Le Ky Vong\Desktop\DotNETMVCwithEF\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_AuthLayout.cshtml.g.cs
+C:\Users\Le Ky Vong\Desktop\DotNETMVCwithEF\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_DataLayout.cshtml.g.cs
+C:\Users\Le Ky Vong\Desktop\DotNETMVCwithEF\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Shared\DataTableLayout.cshtml.g.cs
