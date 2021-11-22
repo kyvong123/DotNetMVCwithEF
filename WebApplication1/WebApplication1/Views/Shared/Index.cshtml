@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebApplication1.Models.Item>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/DataTableLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                    <th>
+                        <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Item</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null){
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RenderingEngine)
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Browser)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Platform)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EngineVersion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CSSGrade)</td>
+                    <td>
+                        <a asp-action="AddOrEdit" asp-route-id="@item.ItemID"><i class="fa fa-marker fa-lg"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.ItemID" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                    </td>
+                </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
