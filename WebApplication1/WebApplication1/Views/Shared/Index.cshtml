@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<WebApplication1.Models.Item>
+@*@model2  WebApplication1.Models.Item*@
 @{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/DataTableLayout.cshtml";
+
 }
 
 
@@ -20,7 +22,7 @@
                     <th>Engine version</th>
                     <th>CSS grade</th>
                     <th>
-                        <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Item</a>
+                        <a onclick="showInPopup('@Url.Action("AddOrEdit","Item",null,Context.Request.Scheme)','New Item')" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Item</a>
                     </th>
                 </tr>
             </thead>
@@ -29,9 +31,7 @@
                     @foreach (var item in Model)
                     {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RenderingEngine)
-                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.RenderingEngine)</td>
                     <td>@Html.DisplayFor(modelItem => item.Browser)</td>
                     <td>@Html.DisplayFor(modelItem => item.Platform)</td>
                     <td>@Html.DisplayFor(modelItem => item.EngineVersion)</td>
@@ -54,6 +54,35 @@
                 </tr>
             </tfoot>
         </table>
+        <script>
+            $(document).ready(function () {
+                $('table[id^="example1"]').dataTable({
+                    "dom": "fltip",
+                   "searching":true,
+                  "responsive": true,
+                  "lengthChange": false,
+                  "ordering":true,
+                  "paging":true,
+                  "autoWidth": false,
+                  "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+
+                    buttons: [
+                        {
+                            extend: 'csv',
+                            className: 'btn btn-success',
+                            text: 'Export to Excel',
+                            //footer: true,
+                            title: 'Commissions Export'
+                        }
+                    ]
+                });
+            });
+          </script>
+
     </div>
-    <!-- /.card-body -->
+    </div>
+    
+      <!-- /.modal -->
+
+    
 </div>

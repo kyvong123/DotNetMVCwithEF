@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    
     public class ItemController : Controller
     {
         private readonly ItemContext _context;
@@ -18,19 +20,25 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Item
-        public async Task<IActionResult> Index()
+        public IEnumerable<Item> GetItem()
         {
-            return View(await _context.DbItem.ToListAsync());
+            return _context.DbItem.ToList();
         }
 
 
-        // GET: Item/Create
-        public IActionResult AddOrEdit(int id = 0)
+        public async Task<IActionResult> AddOrEdit(int id = 0)
         {
             if (id == 0)
                 return View(new Item());
             else
-                return View(_context.DbItem.Find(id));
+            {
+                var item = await _context.DbItem.FindAsync(id);
+                if (item == null)
+                {
+                    return NotFound();
+                }
+                return View(item);
+            }
         }
 
         // POST: Item/Create

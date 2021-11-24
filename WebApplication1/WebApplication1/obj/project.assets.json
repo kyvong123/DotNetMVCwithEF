@@ -7463,20 +7463,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Le Ky Vong\\.nuget\\packages\\": {}
+    "C:\\Users\\Le Ky Vong\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Le Ky Vong\\Desktop\\EFFrameworkDotNET\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Le Ky Vong\\Desktop\\CreateDotNetMVC2\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\Le Ky Vong\\Desktop\\EFFrameworkDotNET\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\Le Ky Vong\\Desktop\\CreateDotNetMVC2\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\Le Ky Vong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Le Ky Vong\\Desktop\\EFFrameworkDotNET\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\Le Ky Vong\\Desktop\\CreateDotNetMVC2\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\Le Ky Vong\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7546,7 +7551,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

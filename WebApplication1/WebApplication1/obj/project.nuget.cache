@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IgVEsKJyG6DhfbGVjZ/H3IITOviyD4NbLCM8uYeLfarmmBIj45wqHxs6OhZe2bpVBFlPOlLwkWhXqmopjSnnJQ==",
+  "dgSpecHash": "01dk2wTBSS13d8V8f6UJmgwKKUfx9yXxxMbpH9hTEWa5A5PsVwfngQ4TmxbfJlSPqRnGPw2MZsljJCIIQou6MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Le Ky Vong\\Desktop\\EFFrameworkDotNET\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\Le Ky Vong\\Desktop\\CreateDotNetMVC2\\DotNetMVCwithEF\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Le Ky Vong\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Le Ky Vong\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.12\\microsoft.aspnetcore.cryptography.internal.5.0.12.nupkg.sha512",
