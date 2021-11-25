@@ -2,60 +2,52 @@
 
 @{ Layout = null; }
 
-<div class="row">
-    <div class="col-md-12">
-        <form asp-action="AddOrEdit" asp-route-id="@Model.ItemID" onsubmit="return jQueryAjaxPost(this);">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ItemID" />
-   
-            <div class="form-group">
-                <label asp-for="RenderingEngine" class="control-label"></label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">#</div>
-                    </div>
-                    <input asp-for="EngineVersion" class="form-control" />
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Add Item</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form>
+        <div class="modal-body">
+            
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Rendering Engine</label>
+                    <input  asp-for="RenderingEngine" class="form-control" id="RenderingEngine" placeholder="Rendering Engine">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Browser</label>
+                    <input asp-for="Browser" class="form-control" id="Browser" placeholder="Browser">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Platform</label>
+                    <input asp-for="Platform" class="form-control" id="Platform" placeholder="Platform">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Engine Version</label>
+                    <input asp-for="EngineVersion" class="form-control" id="EngineVersion" placeholder="Engine Version">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">CSS Grade</label>
+                    <input asp-for="CSSGrade" class="form-control" id="CSSGrade" placeholder="CSS Grade">
+                  </div>
                 </div>
-                <span asp-validation-for="EngineVersion" class="text-danger"></span>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Browser" class="control-label"></label>
-                        <input asp-for="Browser" class="form-control" />
-                        <span asp-validation-for="Browser" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Platform" class="control-label"></label>
-                        <input asp-for="Platform" class="form-control" />
-                        <span asp-validation-for="Platform" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="CSSGrade" class="control-label"></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-dollar-sign"></i>
-                                </div>
-                            </div>
-                            <input asp-for="CSSGrade" class="form-control" />
-                        </div>
-                        <span asp-validation-for="CSSGrade" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6 offset-md-3">
-                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
-                </div>
-            </div>
+                <!-- /.card-body -->
+
+              
+        </div>
+        <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" value="Create" class="btn btn-primary">Save Change</button>
+        </div>
         </form>
+        </div>
+        <!-- /.modal-content -->
     </div>
+<!-- /.modal-dialog -->
 </div>
+<!-- /.modal -->

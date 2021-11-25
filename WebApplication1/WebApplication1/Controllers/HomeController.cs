@@ -39,6 +39,12 @@ namespace WebApplication1.Controllers
             return View(objJson);  //you have to pass model to view
         }
 
+
+        [HttpGet]
+        public IActionResult AddOrEdit()
+        {
+            return PartialView("AddOrEdit", new Item());
+        }
         public IActionResult Privacy()
         {
             return View();

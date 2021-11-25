@@ -3,15 +3,17 @@
 
 // Write your JavaScript code.
 
-//$(function () {
-//    $("#loaderbody").addClass('hide');
-
-//    $(document).bind('ajaxStart', function () {
-//        $("#loaderbody").removeClass('hide');
-//    }).bind('ajaxStop', function () {
-//        $("#loaderbody").addClass('hide');
-//    });
-//});
+$(function () {
+    var PlaceHolderElement = $('#PlaceHolderHere');
+    $('#CreateItem').click(function (event) {
+        var url = $(this).data('url');
+        $.get(url).done(function (data) {
+            PlaceHolderElement.html(data);
+            PlaceHolderElement.find('.modal').modal('show');
+        })
+    })
+    PlaceHolderElement.on('click','[]')
+})
 
 showInPopup = (url, title) => {
     $.ajax({
@@ -33,7 +35,7 @@ jQueryAjaxPost = form => {
     try {
         $.ajax({
             type: 'POST',
-            url: form.action,
+            url: 'Item/GetItem/PostItem',
             data: new FormData(form),
             contentType: false,
             processData: false,

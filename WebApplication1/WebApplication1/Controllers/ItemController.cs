@@ -25,28 +25,18 @@ namespace WebApplication1.Controllers
             return _context.DbItem.ToList();
         }
 
-
-        public async Task<IActionResult> AddOrEdit(int id = 0)
+        [HttpGet]
+        public IActionResult AddOrEdit()
         {
-            if (id == 0)
-                return View(new Item());
-            else
-            {
-                var item = await _context.DbItem.FindAsync(id);
-                if (item == null)
-                {
-                    return NotFound();
-                }
-                return View(item);
-            }
+               return PartialView("AddOrEdit",new Item());
         }
 
-        // POST: Item/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //POST: Item/Create
+        //To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("ItemId,FullName,EmpCode,Position,OfficeLocation")] Item item)
+        public async Task<IActionResult> PostItem([Bind("RenderingEngine,Browser,Platform,EngineVersion,CSSGrade")] Item item)
         {
             if (ModelState.IsValid)
             {
