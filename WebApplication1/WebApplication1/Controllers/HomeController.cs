@@ -67,12 +67,18 @@ namespace WebApplication1.Controllers
 
 
         [HttpGet]
-        public IActionResult AddOrEdit(int? id)
+        public IActionResult Edit(int id)
+        {
+             return PartialView("Edit", _context.DbItem.Where(x => x.ItemID == id).FirstOrDefault());
+        }
+
+        [HttpGet]
+        public IActionResult Add(int? id)
         {
             if (id == 0)
-                return PartialView("AddOrEdit", new Item());
+                return PartialView("Add", new Item());
             else
-                return PartialView("AddOrEdit", _context.DbItem.Where(x => x.ItemID == id).FirstOrDefault());
+                return PartialView("Add", _context.DbItem.Where(x => x.ItemID == id).FirstOrDefault());
         }
 
         [HttpGet]
@@ -130,7 +136,23 @@ namespace WebApplication1.Controllers
         }
 
 
+        //PUST: Home/PutItem/id
+        //To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 
+        [HttpPut]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> PutItem(int? id,[Bind("RenderingEngine,Browser,Platform,EngineVersion,CSSGrade")] Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                item.ItemID = (int)id;
+                _context.DbItem.Update(item);
+                await _context.SaveChangesAsync();
+                return Json(new { isValid = false, html = RenderRazorViewToString(this, "Index", item) });
+            }
+            return View(item);
+        }
         public IActionResult Privacy()
         {
             return View();

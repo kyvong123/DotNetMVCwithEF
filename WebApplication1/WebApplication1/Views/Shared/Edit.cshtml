@@ -11,7 +11,7 @@
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form onsubmit="return jQueryAjaxPost(this);" asp-action="PostItem" >
+        <form onsubmit="return jQueryAjaxPut(this);" asp-action="PutItem" asp-route-id="@Model.ItemID" >
         <div class="modal-body">
             
                 <div class="card-body">

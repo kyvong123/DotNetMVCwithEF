@@ -78,6 +78,33 @@ var jQueryAjaxPost = form => {
     }
 }
 
+var jQueryAjaxPut = form => {
+    url2 = decodeURIComponent(form.action)
+    try {
+        $.ajax({
+            type: 'PUT',
+            url: url2,
+            data: new FormData(form),
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res.success);
+                $('#modal-default .modal-body').html('');
+                $('#modal-default .modal-title').html('');
+                $('#modal-default').modal('hide');
+                location.reload();
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+        //to prevent default form submit event
+        return false;
+    } catch (ex) {
+        console.log(ex)
+    }
+}
+
 var jQueryAjaxDelete = form => {
     try {
         $.ajax({

@@ -1,0 +1,54 @@
+﻿@model WebApplication1.Models.Item
+
+@{ Layout = null; }
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Add Item</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form onsubmit="return jQueryAjaxPost(this);" asp-action="PostItem" >
+        <div class="modal-body">
+            
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Rendering Engine</label>
+                    <input  asp-for="RenderingEngine" class="form-control" id="RenderingEngine" placeholder="Rendering Engine">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Browser</label>
+                    <input asp-for="Browser" class="form-control" id="Browser" placeholder="Browser">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Platform</label>
+                    <input asp-for="Platform" class="form-control" id="Platform" placeholder="Platform">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Engine Version</label>
+                    <input asp-for="EngineVersion" class="form-control" id="EngineVersion" placeholder="Engine Version">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">CSS Grade</label>
+                    <input asp-for="CSSGrade" class="form-control" id="CSSGrade" placeholder="CSS Grade">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+              
+        </div>
+        <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+        </div>
+        </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+

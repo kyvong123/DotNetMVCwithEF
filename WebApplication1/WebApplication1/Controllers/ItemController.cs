@@ -26,9 +26,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddOrEdit()
+        public IActionResult Add()
         {
-               return PartialView("AddOrEdit",new Item());
+               return PartialView("Add",new Item());
         }
 
         //POST: Item/Create

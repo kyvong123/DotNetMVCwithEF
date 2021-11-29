@@ -24,7 +24,7 @@
                     <th>Engine version</th>
                     <th>CSS grade</th>
                     <th>
-                         <button type="button" data-toggle="ajax-modal" id="CreateItem" class="btn btn-outline-success" data-target="#modal-default" data-url="@Url.Action("AddOrEdit")"><i class="far fa-plus-square"></i> Item</button>
+                         <button type="button" data-toggle="ajax-modal" id="CreateItem" class="btn btn-outline-success" data-target="#modal-default" data-url="@Url.Action("Add")"><i class="far fa-plus-square"></i> Item</button>
                     </th>
                 </tr>
             </thead>
@@ -39,7 +39,7 @@
                     <td>@Html.DisplayFor(modelItem => item.EngineVersion)</td>
                     <td>@Html.DisplayFor(modelItem => item.CSSGrade)</td>
                     <td>
-                        <button type="button" class="EditItem" data-toggle="ajax-modal" data-target="#modal-default" data-url="@Url.Action("AddOrEdit/" + item.ItemID.ToString())" asp-route-id="@item.ItemID"><i class="fa fa-marker fa-lg"></i></button>
+                        <button type="button" class="EditItem" data-toggle="ajax-modal" data-target="#modal-default" data-url="@Url.Action("Edit/" + item.ItemID.ToString())" asp-route-id="@item.ItemID"><i class="fa fa-marker fa-lg"></i></button>
                         <button type="button" class="DeleteItem" data-toggle="ajax-modal"  data-target="#deleteConfirm" data-url="@Url.Action("DeleteConfirm/" + item.ItemID.ToString())" asp-route-id="@item.ItemID" ><i class="fa fa-trash-alt fa-lg"></i></button>
                         @* @Html.ActionLink('Delete', 'Delete', new { @Id = Data.StudentId })*@
                     </td>

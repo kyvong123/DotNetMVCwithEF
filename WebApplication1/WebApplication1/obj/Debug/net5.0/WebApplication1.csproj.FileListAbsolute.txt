@@ -496,7 +496,6 @@ C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\Web
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\ref\WebApplication1.dll
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.pdb
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\WebApplication1.genruntimeconfig.cache
-C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Shared\AddOrEdit.cshtml.g.cs
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Shared\DeleteConfirm.cshtml.g.cs
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
@@ -854,3 +853,5 @@ C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\Web
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\bin\Debug\net5.0\System.Text.Json.dll
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\bin\Debug\net5.0\zh-Hans\Humanizer.resources.dll
 C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\bin\Debug\net5.0\zh-Hant\Humanizer.resources.dll
+C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Shared\Edit.cshtml.g.cs
+C:\Users\Le Ky Vong\Desktop\CreateDotNetMVC2\DotNetMVCwithEF\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Shared\Add.cshtml.g.cs
