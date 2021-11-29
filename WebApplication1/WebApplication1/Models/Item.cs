@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    
+    [Table("DdbItem")]
     public class Item
     {
         [Key]
+        [Column("ItemID")]
         public int ItemID { get; set; }
         [Column(TypeName = "nvarchar(250)")]
         [DisplayName("Rendering Engine")]

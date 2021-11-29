@@ -12,10 +12,31 @@ $(function () {
             PlaceHolderElement.find('.modal').modal('show');
         })
     })
+
+    $('.DeleteItem').click(function (event) {
+        var url = $(this).data('url');
+        url = decodeURIComponent(url);
+        var a = 5;
+        $.get(url).done(function (data) {
+            PlaceHolderElement.html(data);
+            PlaceHolderElement.find('.modal').modal('show');
+        })
+    })
+
+    $('.EditItem').click(function (event) {
+        var url = $(this).data('url');
+        url = decodeURIComponent(url);
+        $.get(url).done(function (data) {
+            PlaceHolderElement.html(data);
+            PlaceHolderElement.find('.modal').modal('show');
+        })
+    })
     PlaceHolderElement.on('click','[]')
 })
 
-showInPopup = (url, title) => {
+
+
+var showInPopup = (url, title) => {
     $.ajax({
         type: 'GET',
         url: url,
@@ -31,23 +52,20 @@ showInPopup = (url, title) => {
     })
 }
 
-jQueryAjaxPost = form => {
+var jQueryAjaxPost = form => {
     try {
         $.ajax({
             type: 'POST',
-            url: 'Item/GetItem/PostItem',
+            url: form.action,
             data: new FormData(form),
             contentType: false,
             processData: false,
             success: function (res) {
-                if (res.isValid) {
-                    $('#view-all').html(res.html)
-                    $('#form-modal .modal-body').html('');
-                    $('#form-modal .modal-title').html('');
-                    $('#form-modal').modal('hide');
-                }
-                else
-                    $('#form-modal .modal-body').html(res.html);
+                console.log(res.success);
+                $('#modal-default .modal-body').html('');
+                $('#modal-default .modal-title').html('');
+                $('#modal-default').modal('hide');
+                location.reload();
             },
             error: function (err) {
                 console.log(err)
@@ -60,26 +78,26 @@ jQueryAjaxPost = form => {
     }
 }
 
-jQueryAjaxDelete = form => {
-    if (confirm('Are you sure to delete this record ?')) {
-        try {
-            $.ajax({
-                type: 'POST',
-                url: form.action,
-                data: new FormData(form),
-                contentType: false,
-                processData: false,
-                success: function (res) {
-                    $('#view-all').html(res.html);
-                },
-                error: function (err) {
-                    console.log(err)
-                }
-            })
-        } catch (ex) {
-            console.log(ex)
-        }
-    }
+var jQueryAjaxDelete = form => {
+    try {
+        $.ajax({
+            type: 'POST',
+            url: 'DeleteConfirmed' ,
+            data: null,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                $('#deleteConfirm').modal('hide');
+                $('#view-all').html(res.html);
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    } catch (ex) {
+        console.log(ex)
+}
+    
 
     //prevent default form submit event
     return false;

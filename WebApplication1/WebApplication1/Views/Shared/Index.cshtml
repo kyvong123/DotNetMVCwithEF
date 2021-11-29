@@ -39,8 +39,9 @@
                     <td>@Html.DisplayFor(modelItem => item.EngineVersion)</td>
                     <td>@Html.DisplayFor(modelItem => item.CSSGrade)</td>
                     <td>
-                        <a asp-action="AddOrEdit" asp-route-id="@item.ItemID"><i class="fa fa-marker fa-lg"></i></a>
-                        <a asp-action="Delete" asp-route-id="@item.ItemID" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+                        <button type="button" class="EditItem" data-toggle="ajax-modal" data-target="#modal-default" data-url="@Url.Action("AddOrEdit/" + item.ItemID.ToString())" asp-route-id="@item.ItemID"><i class="fa fa-marker fa-lg"></i></button>
+                        <button type="button" class="DeleteItem" data-toggle="ajax-modal"  data-target="#deleteConfirm" data-url="@Url.Action("DeleteConfirm/" + item.ItemID.ToString())" asp-route-id="@item.ItemID" ><i class="fa fa-trash-alt fa-lg"></i></button>
+                        @* @Html.ActionLink('Delete', 'Delete', new { @Id = Data.StudentId })*@
                     </td>
                 </tr>
                     }
@@ -68,15 +69,7 @@
                   "autoWidth": false,
                   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
 
-                    buttons: [
-                        {
-                            extend: 'csv',
-                            className: 'btn btn-success',
-                            text: 'Export to Excel',
-                            //footer: true,
-                            title: 'Commissions Export'
-                        }
-                    ]
+              
                 });
             });
           </script>
