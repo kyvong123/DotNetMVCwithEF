@@ -31,7 +31,23 @@ $(function () {
             PlaceHolderElement.find('.modal').modal('show');
         })
     })
-    PlaceHolderElement.on('click','[]')
+    PlaceHolderElement.on('click', '[]')
+
+
+    $('#example1').dataTable({
+        "dom": "fltip",
+        "searching": true,
+        "responsive": true,
+        "lengthChange": false,
+        "ordering": true,
+        "paging": true,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+
+
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
 })
 
 
@@ -66,6 +82,21 @@ var jQueryAjaxPost = form => {
                 $('#modal-default .modal-title').html('');
                 $('#modal-default').modal('hide');
                 location.reload();
+
+                $.ajax({
+                    type: 'GET',
+                    url: "https://localhost:44363/Item/GetItem",
+                    success: function (res) {
+                        $(document).Toasts('create', {
+                            class: 'bg-success',
+                            title: 'Success !',
+                            subtitle: 'Item Created',
+                            body: 'You created a new Item !'
+                        })
+
+                    }
+                })
+               
             },
             error: function (err) {
                 console.log(err)
@@ -93,6 +124,21 @@ var jQueryAjaxPut = form => {
                 $('#modal-default .modal-title').html('');
                 $('#modal-default').modal('hide');
                 location.reload();
+
+                $.ajax({
+                    type: 'GET',
+                    url: "https://localhost:44363/Item/GetItem",
+                    success: function (res) {
+                        $(document).Toasts('create', {
+                            class: 'bg-success',
+                            title: 'Success !',
+                            subtitle: 'Item Updated',
+                            body: 'You updated a new Item !'
+                        })
+
+                    }
+                })
+
             },
             error: function (err) {
                 console.log(err)
